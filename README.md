@@ -2,9 +2,12 @@
 
 A minimalist Nord-themed Linux desktop rice, built around **qtile** on Debian (Trixie). Keyboard-driven, X11, no display manager (launched via `startx`).
 
-## Screenshots
+## Screenshots  
 
+### Screenshot 1 
 ![Preview 1](screenshots/Preview1.png)
+
+### Screenshot 2 
 ![Preview 2](screenshots/Preview2.png)
 
 ## Stack
