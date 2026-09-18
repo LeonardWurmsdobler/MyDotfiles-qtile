@@ -286,4 +286,4 @@ wl_input_rules = None
 wl_xcursor_theme = None
 wl_xcursor_size = 24
 
-wmname = "GoonWM"
+wmname = "Qtile"
