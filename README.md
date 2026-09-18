@@ -4,7 +4,8 @@ A minimalist Nord-themed Linux desktop rice, built around **qtile** on Debian (T
 
 ## Screenshots
 
-_TODO: add screenshots of the desktop, bar, and rofi menus._
+![Preview 1](screenshots/Preview1.png)
+![Preview 2](screenshots/Preview2.png)
 
 ## Stack
 
