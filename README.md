@@ -68,15 +68,16 @@ Color palette throughout is [Nord](https://www.nordtheme.com/).
 
 ## Installing
 
-There's no install script (yet) — copy or symlink what you want:
+On a fresh Debian Trixie box:
 
 ```sh
-# example: symlink qtile + rofi config in place
-ln -s ~/MyDotfiles-qtile/config/qtile ~/.config/qtile
-ln -s ~/MyDotfiles-qtile/config/rofi ~/.config/rofi
+git clone git@github.com:LeonardWurmsdobler/MyDotfiles-qtile.git ~/MyDotfiles-qtile
+cd ~/MyDotfiles-qtile
+./install.sh --dry-run   # see everything it would do first
+./install.sh
 ```
 
-Repeat for whichever pieces you want, plus the `home/.bashrc` / `home/.xinitrc` files, `home/Pictures/Wallpapers/` (symlink or copy to `~/Pictures/Wallpapers`), and the GRUB theme (`boot/grub-themes/nord-minimalist/`, which needs `sudo cp -r` into `/boot/grub/themes/` and `GRUB_THEME` set in `/etc/default/grub`, then `update-grub`).
+It installs the apt package stack, builds/fetches the few pieces not in Debian's repos (starship, i3lock-color, Nordic/Nordzy-dark/Bibata-Modern-Ice, a JetBrainsMono Nerd Font, LazyVim), symlinks this repo's configs into place (backing up anything already there), and — after an explicit y/N prompt — installs the GRUB theme. Safe to re-run.
 
 ## qtile keybinds
 
