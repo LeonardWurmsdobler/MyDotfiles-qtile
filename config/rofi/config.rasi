@@ -1,0 +1,16 @@
+configuration {
+    modi:                       "drun,run,window,ssh";
+    show-icons:                 true;
+    icon-theme:                 "Adwaita";
+    display-drun:               "󰀻 Apps";
+    display-run:                "󰆍 Run";
+    display-window:             "󰖯 Window";
+    display-ssh:                "󰣀 SSH";
+    drun-display-format:        "{icon} {name}";
+    font:                       "JetBrainsMono Nerd Font 11";
+    sidebar-mode:               false;
+    disable-history:            false;
+    hover-select:               false;
+}
+
+@theme "nord.rasi"

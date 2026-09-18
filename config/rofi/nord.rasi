@@ -1,0 +1,162 @@
+/**
+ * Nord — matches the starship prompt palette/font for a consistent rice.
+ * https://www.nordtheme.com/
+ */
+
+* {
+    nord0:  #2e3440;
+    nord1:  #3b4252;
+    nord2:  #434c5e;
+    nord3:  #4c566a;
+    nord4:  #d8dee9;
+    nord5:  #e5e9f0;
+    nord6:  #eceff4;
+    nord7:  #8fbcbb;
+    nord8:  #88c0d0;
+    nord9:  #81a1c1;
+    nord10: #5e81ac;
+    nord11: #bf616a;
+    nord12: #d08770;
+    nord13: #ebcb8b;
+    nord14: #a3be8c;
+    nord15: #b48ead;
+
+    background:     @nord0;
+    background-alt: @nord1;
+    foreground:     @nord6;
+    text-muted:     @nord4;
+    accent:         @nord8;
+    urgent:         @nord11;
+    active:         @nord14;
+
+    background-color: transparent;
+    text-color:        @foreground;
+
+    font: "JetBrainsMono Nerd Font 11";
+}
+
+window {
+    transparency:                 "real";
+    background-color:             @background;
+    border:                       2px;
+    border-color:                 @accent;
+    border-radius:                0px;
+    padding:                      0px;
+    width:                        38%;
+    location:                     center;
+    x-offset:                     0px;
+    y-offset:                     0px;
+}
+
+mainbox {
+    background-color: transparent;
+    children:          [ inputbar, message, listview ];
+    spacing:            10px;
+    padding:            14px;
+}
+
+inputbar {
+    background-color: @background-alt;
+    text-color:         @foreground;
+    border-radius:       0px;
+    padding:             10px 14px;
+    spacing:             8px;
+    children:            [ prompt, entry ];
+}
+
+prompt {
+    background-color: transparent;
+    text-color:         @accent;
+    font:                "JetBrainsMono Nerd Font 11 Bold";
+}
+
+entry {
+    background-color:  transparent;
+    text-color:          @foreground;
+    placeholder:          "Search…";
+    placeholder-color:    @nord3;
+    cursor:               text;
+}
+
+message {
+    background-color: @background-alt;
+    border-radius:       0px;
+    padding:             8px 12px;
+}
+
+textbox {
+    background-color: transparent;
+    text-color:         @text-muted;
+}
+
+listview {
+    background-color:   transparent;
+    columns:              1;
+    lines:                8;
+    spacing:              4px;
+    cycle:                true;
+    dynamic:              true;
+    layout:               vertical;
+    fixed-height:         false;
+    scrollbar:            true;
+}
+
+scrollbar {
+    width:             4px;
+    border:             0px;
+    handle-color:       @nord3;
+    handle-width:       8px;
+    padding:            0px;
+}
+
+element {
+    background-color: transparent;
+    text-color:         @foreground;
+    border-radius:       0px;
+    padding:             8px 10px;
+    spacing:             10px;
+    cursor:              pointer;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color:         @foreground;
+}
+
+element normal.urgent {
+    background-color: transparent;
+    text-color:         @urgent;
+}
+
+element normal.active {
+    background-color: transparent;
+    text-color:         @active;
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color:         @nord0;
+}
+
+element selected.urgent {
+    background-color: @urgent;
+    text-color:         @nord6;
+}
+
+element selected.active {
+    background-color: @active;
+    text-color:         @nord0;
+}
+
+element-icon {
+    background-color: transparent;
+    size:                1.1em;
+    cursor:              inherit;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:          inherit;
+    cursor:               inherit;
+    vertical-align:        0.5;
+}

@@ -1,0 +1,130 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Nord — modern two-line powerline prompt
+# https://www.nordtheme.com/
+
+format = """
+[ ](fg:nord0 bg:nord0)$os$username$hostname[](fg:nord0 bg:nord8)$directory[](fg:nord8 bg:nord3)$git_branch$git_status[](fg:nord3 bg:nord1)$nodejs$python$rustlang$golang$docker_context[](fg:nord1)$fill$cmd_duration$time
+$character"""
+
+add_newline = true
+command_timeout = 1000
+scan_timeout = 30
+
+palette = "nord"
+
+[palettes.nord]
+nord0  = "#2e3440"
+nord1  = "#3b4252"
+nord2  = "#434c5e"
+nord3  = "#4c566a"
+nord4  = "#d8dee9"
+nord5  = "#e5e9f0"
+nord6  = "#eceff4"
+nord7  = "#8fbcbb"
+nord8  = "#88c0d0"
+nord9  = "#81a1c1"
+nord10 = "#5e81ac"
+nord11 = "#bf616a"
+nord12 = "#d08770"
+nord13 = "#ebcb8b"
+nord14 = "#a3be8c"
+nord15 = "#b48ead"
+
+[os]
+disabled = false
+style = "bg:nord0 fg:nord6"
+format = "[ $symbol ]($style)"
+
+[os.symbols]
+Debian = "󰣚"
+Ubuntu = "󰕈"
+Macos = "󰀵"
+Linux = ""
+Windows = "󰍲"
+
+[username]
+style_user = "bg:nord0 fg:nord8"
+style_root = "bg:nord0 fg:nord11"
+format = "[$user]($style)"
+show_always = false
+disabled = false
+
+[hostname]
+ssh_only = true
+style = "bg:nord0 fg:nord4"
+format = "[@$hostname ]($style)"
+disabled = false
+
+[directory]
+style = "bg:nord8 fg:nord0"
+format = "[ 󰉋 $path ]($style)"
+truncation_length = 3
+truncate_to_repo = true
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"~" = "󰋜 ~"
+
+[git_branch]
+style = "bg:nord3 fg:nord8"
+format = "[ 󰘬 $branch ]($style)"
+
+[git_status]
+style = "bg:nord3 fg:nord13"
+format = "[($all_status$ahead_behind )]($style)"
+conflicted = "🏳"
+ahead = "󰜷${count}"
+behind = "󰜮${count}"
+diverged = "󰹹${ahead_count}󰜷${behind_count}󰜮"
+up_to_date = ""
+untracked = "?${count}"
+stashed = "󰆓${count}"
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»${count}"
+deleted = "✘${count}"
+
+[nodejs]
+style = "bg:nord1 fg:nord14"
+format = "[ 󰎙 $version ]($style)"
+
+[python]
+style = "bg:nord1 fg:nord13"
+format = "[ 󰌠 $version ]($style)"
+
+[rust]
+style = "bg:nord1 fg:nord12"
+format = "[ 󱘗 $version ]($style)"
+
+[golang]
+style = "bg:nord1 fg:nord9"
+format = "[ 󰟓 $version ]($style)"
+
+[docker_context]
+style = "bg:nord1 fg:nord7"
+format = "[ 󰡨 $context ]($style)"
+only_with_files = true
+
+[fill]
+symbol = " "
+style = "fg:nord2"
+
+[cmd_duration]
+min_time = 2000
+style = "fg:nord13"
+format = "[ 󱦟 $duration ]($style) "
+
+[time]
+disabled = false
+time_format = "%H:%M"
+style = "fg:nord3"
+format = "[$time]($style) "
+
+[line_break]
+disabled = false
+
+[character]
+success_symbol = "[❯](bold nord14)"
+error_symbol = "[❯](bold nord11)"
+vicmd_symbol = "[❮](bold nord9)"
