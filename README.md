@@ -113,3 +113,7 @@ Repeat for whichever pieces you want, plus the `home/.bashrc` / `home/.xinitrc` 
 A modular menu — each entry is a standalone script in `config/rofi/scripts/menu/` with a `# LABEL:` comment line; the dispatcher (`config/rofi/menu.sh`) scans that folder and builds the list from it, so adding a feature is just dropping in a new file. Full details, including how to add your own entry, are in [`config/rofi/README.md`](config/rofi/README.md).
 
 Current entries: Network (nmtui), Wallpaper, Power, Lock, Config (opens `qtile/config.py` in nvim), Apps (rofi drun).
+
+## License
+
+[MIT](LICENSE)
