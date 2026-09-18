@@ -51,20 +51,20 @@ Color palette throughout is [Nord](https://www.nordtheme.com/).
 │   └── starship.toml
 ├── home/                # maps to ~/
 │   ├── .bashrc
-│   └── .xinitrc
+│   ├── .xinitrc
+│   └── Pictures/
+│       └── Wallpapers/    # the Nord wallpaper set rofi/scripts/wallpaper.sh picks from
 └── boot/
     └── grub-themes/nord-minimalist/   # maps to /boot/grub/themes/nord-minimalist
 ```
 
 ## Not included, on purpose
 
-- **Wallpapers** — kept out of the repo (not config, can be large/personal). Put your own in `~/Pictures/Wallpapers`; `rofi/scripts/wallpaper.sh` picks from there.
 - **`~/.config/alacritty/themes/`** — this is a clone of the community [`alacritty/alacritty-theme`](https://github.com/alacritty/alacritty-theme) repo, not personal config. `alacritty.toml` imports `~/.config/alacritty/themes/themes/nord.toml` from it, so it needs to exist at that path. Get it with:
   ```sh
   git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
   ```
 - **GTK theme / icon theme / cursor theme packages** (Nordic, Nordzy-dark, Bibata-Modern-Ice) — these are installed system themes referenced by name in `gtk-3.0/gtk-4.0/settings.ini` and `.xinitrc`, not files that belong in a dotfiles repo. Install them separately (package manager / your distro's theme repos) before applying these configs.
-- Anything under `~/.config` that was either machine-specific noise (GTK/GNOME internal databases, cached window state, mime associations) or not actually part of the visual rice.
 
 ## Installing
 
@@ -76,7 +76,7 @@ ln -s ~/MyDotfiles-qtile/config/qtile ~/.config/qtile
 ln -s ~/MyDotfiles-qtile/config/rofi ~/.config/rofi
 ```
 
-Repeat for whichever pieces you want, plus the `home/.bashrc` / `home/.xinitrc` files and the GRUB theme (`boot/grub-themes/nord-minimalist/`, which needs `sudo cp -r` into `/boot/grub/themes/` and `GRUB_THEME` set in `/etc/default/grub`, then `update-grub`).
+Repeat for whichever pieces you want, plus the `home/.bashrc` / `home/.xinitrc` files, `home/Pictures/Wallpapers/` (symlink or copy to `~/Pictures/Wallpapers`), and the GRUB theme (`boot/grub-themes/nord-minimalist/`, which needs `sudo cp -r` into `/boot/grub/themes/` and `GRUB_THEME` set in `/etc/default/grub`, then `update-grub`).
 
 ## qtile keybinds
 
